@@ -1,0 +1,178 @@
+/* ============================================================
+   Epoxy Flooring Miramar FL — Main Stylesheet
+   ============================================================ */
+
+/* Reset & Base */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Segoe UI', Arial, sans-serif; color: #222; background: #fff; line-height: 1.6; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+
+/* Colors */
+:root {
+  --primary: #1a3a6b;
+  --primary-dark: #122a52;
+  --accent: #e8a020;
+  --accent-dark: #c8841a;
+  --light-bg: #f5f7fa;
+  --border: #dde2ea;
+  --text-muted: #666;
+  --white: #fff;
+}
+
+/* Typography */
+h1, h2, h3, h4 { line-height: 1.25; font-weight: 700; }
+h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); }
+h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); }
+h3 { font-size: 1.25rem; }
+p { margin-bottom: 1rem; }
+.text-center { text-align: center; }
+
+/* Layout */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 60px 0; }
+.section-alt { background: var(--light-bg); }
+.section-title { margin-bottom: 12px; color: var(--primary); }
+.section-subtitle { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 40px; }
+
+/* ---- HEADER / NAV ---- */
+header {
+  background: var(--primary);
+  color: var(--white);
+  position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.header-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 20px; max-width: 1100px; margin: 0 auto;
+}
+.logo { font-size: 1.2rem; font-weight: 700; color: var(--white); }
+.logo span { color: var(--accent); }
+nav { display: flex; gap: 20px; align-items: center; }
+nav a { color: rgba(255,255,255,0.85); font-size: 0.95rem; transition: color 0.2s; }
+nav a:hover { color: var(--accent); }
+.nav-cta {
+  background: var(--accent); color: var(--white) !important;
+  padding: 8px 18px; border-radius: 4px; font-weight: 600;
+  transition: background 0.2s !important;
+}
+.nav-cta:hover { background: var(--accent-dark) !important; }
+
+/* ---- HERO ---- */
+.hero {
+  background: linear-gradient(135deg, rgba(26,58,107,0.88) 0%, rgba(18,42,82,0.92) 100%),
+              url('images/hero-epoxy-floor.jpg') center/cover no-repeat;
+  color: var(--white);
+  padding: 90px 20px 70px;
+  text-align: center;
+}
+.hero h1 { margin-bottom: 18px; }
+.hero p { font-size: 1.2rem; max-width: 620px; margin: 0 auto 32px; opacity: 0.92; }
+.hero-cta-group { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.btn { display: inline-block; padding: 14px 30px; border-radius: 5px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: 0.2s; }
+.btn-primary { background: var(--accent); color: var(--white); border: 2px solid var(--accent); }
+.btn-primary:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
+.btn-outline { background: transparent; color: var(--white); border: 2px solid var(--white); }
+.btn-outline:hover { background: rgba(255,255,255,0.15); }
+
+/* ---- TRUST BAR ---- */
+.trust-bar { background: var(--accent); color: var(--white); padding: 18px 20px; }
+.trust-inner { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; max-width: 1100px; margin: 0 auto; }
+.trust-item { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.95rem; }
+.trust-icon { font-size: 1.2rem; }
+
+/* ---- SERVICES GRID ---- */
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; margin-top: 40px; }
+.service-card {
+  border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.service-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.1); transform: translateY(-3px); }
+.service-card img { width: 100%; height: 200px; object-fit: cover; }
+.service-card-body { padding: 20px; }
+.service-card-body h3 { color: var(--primary); margin-bottom: 8px; }
+.service-card-body p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 14px; }
+.service-card-body a { color: var(--accent); font-weight: 600; font-size: 0.95rem; }
+
+/* ---- WHY US ---- */
+.why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 28px; margin-top: 40px; }
+.why-item { text-align: center; padding: 30px 20px; background: var(--white); border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.why-icon { font-size: 2.5rem; margin-bottom: 14px; }
+.why-item h3 { color: var(--primary); margin-bottom: 8px; }
+.why-item p { font-size: 0.92rem; color: var(--text-muted); }
+
+/* ---- PHOTO GALLERY ---- */
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 40px; }
+.gallery-grid img { border-radius: 6px; width: 100%; height: 220px; object-fit: cover; }
+
+/* ---- PRICING TABLE ---- */
+.pricing-table { width: 100%; border-collapse: collapse; margin-top: 30px; }
+.pricing-table th, .pricing-table td { border: 1px solid var(--border); padding: 12px 16px; text-align: left; }
+.pricing-table th { background: var(--primary); color: var(--white); }
+.pricing-table tr:nth-child(even) td { background: var(--light-bg); }
+
+/* ---- FAQ ---- */
+.faq-list { margin-top: 30px; }
+.faq-item { border-bottom: 1px solid var(--border); padding: 20px 0; }
+.faq-question { font-weight: 700; font-size: 1.05rem; color: var(--primary); margin-bottom: 8px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+.faq-answer { font-size: 0.97rem; color: #444; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+.faq-item.open .faq-answer { max-height: 300px; }
+.faq-toggle { font-size: 1.3rem; color: var(--accent); transition: transform 0.3s; }
+.faq-item.open .faq-toggle { transform: rotate(45deg); }
+
+/* ---- CTA BAND ---- */
+.cta-band { background: var(--primary); color: var(--white); padding: 60px 20px; text-align: center; }
+.cta-band h2 { margin-bottom: 12px; }
+.cta-band p { font-size: 1.1rem; opacity: 0.88; margin-bottom: 28px; }
+.cta-phone { font-size: 1.8rem; font-weight: 700; color: var(--accent); display: block; margin-bottom: 20px; }
+
+/* ---- CONTACT FORM ---- */
+.contact-section { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
+@media (max-width: 768px) { .contact-section { grid-template-columns: 1fr; } }
+.form-group { margin-bottom: 18px; }
+.form-group label { display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.95rem; }
+.form-group input, .form-group textarea, .form-group select {
+  width: 100%; padding: 11px 14px; border: 1px solid var(--border); border-radius: 5px;
+  font-size: 1rem; font-family: inherit; transition: border-color 0.2s;
+}
+.form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--primary); }
+.form-group textarea { min-height: 120px; resize: vertical; }
+.form-submit { background: var(--accent); color: var(--white); border: none; padding: 14px 32px; border-radius: 5px; font-size: 1rem; font-weight: 700; cursor: pointer; width: 100%; transition: background 0.2s; }
+.form-submit:hover { background: var(--accent-dark); }
+.contact-info h3 { color: var(--primary); margin-bottom: 20px; }
+.contact-info p { margin-bottom: 14px; display: flex; align-items: flex-start; gap: 10px; }
+.contact-info .ci-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+
+/* ---- FOOTER ---- */
+footer { background: #111; color: rgba(255,255,255,0.7); padding: 40px 20px 20px; }
+.footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
+.footer-col h4 { color: var(--white); margin-bottom: 14px; font-size: 1rem; }
+.footer-col ul li { margin-bottom: 8px; }
+.footer-col ul li a { color: rgba(255,255,255,0.7); font-size: 0.92rem; transition: color 0.2s; }
+.footer-col ul li a:hover { color: var(--accent); }
+.footer-bottom { text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; }
+
+/* ---- BREADCRUMB ---- */
+.breadcrumb { background: var(--light-bg); padding: 12px 20px; font-size: 0.9rem; color: var(--text-muted); }
+.breadcrumb a { color: var(--primary); }
+.breadcrumb span { margin: 0 6px; }
+
+/* ---- PAGE HERO (inner pages) ---- */
+.page-hero { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: var(--white); padding: 60px 20px; text-align: center; }
+.page-hero h1 { margin-bottom: 12px; }
+.page-hero p { font-size: 1.1rem; opacity: 0.88; max-width: 600px; margin: 0 auto; }
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 768px) {
+  nav { gap: 12px; }
+  .nav-cta { padding: 7px 14px; }
+  .trust-inner { gap: 20px; }
+  .section { padding: 40px 0; }
+  .contact-section { gap: 30px; }
+}
+@media (max-width: 480px) {
+  nav a:not(.nav-cta) { display: none; }
+  .hero-cta-group { flex-direction: column; align-items: center; }
+}
